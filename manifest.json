@@ -1,0 +1,25 @@
+{
+	"name": "Active HTML Validator",
+	"description": "This extension adds a button to the toolbar that allows validation of the current page including dynamic content.",
+	"version": "0.1",
+	"manifest_version": 2,
+	"background": {
+		"scripts": ["jquery.js", "background.js"],
+		"persistent": false
+	},
+	"icons": { "128": "w3c.png" },
+	"permissions": [
+		"tabs", "http://*/*", "https://*/*"
+	],
+	"browser_action": {
+		"default_title": "Validate this page",
+		"default_icon": "w3c.png"
+	},
+	"content_scripts": [
+		{
+			"matches": ["http://*/*","https://*/*"],
+			"css": [],
+			"js": ["jquery.js", "content_script.js"]
+		}
+	]
+}
